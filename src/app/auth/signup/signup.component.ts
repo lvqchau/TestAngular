@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { SignupParams, SignupResult } from './../../core/model/user.model';
 
@@ -11,7 +12,7 @@ import { SignupParams, SignupResult } from './../../core/model/user.model';
 export class SignupComponent implements OnInit {
   @ViewChild('signupForm') signupForm!: NgForm
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +24,7 @@ export class SignupComponent implements OnInit {
     this.authService.signup(this.signupForm.value).subscribe({
       next: (result) => {
         console.log(result)
+        this.router.navigateByUrl('/signin')
       },
       error: (error) => {
         console.log(error)
