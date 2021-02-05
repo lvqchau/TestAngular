@@ -22,8 +22,8 @@ export class MovieService {
     return this.http.get<Movie[]>(url)
   }
 
-  getMovieDetail(): Observable<MovieDetail> {
-    const url = "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=1314";
+  getMovieDetail(movieId:string): Observable<MovieDetail> {
+    const url = `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${movieId}`;
     return this.http.get<MovieDetail>(url)
   }
 
