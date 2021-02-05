@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MovieService } from '../../core/services/movie.service'
+import { MovieDetail } from '../../core/model/movie.model'
 @Component({
   selector: 'app-movie',
   templateUrl: './movie.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieComponent implements OnInit {
 
-  constructor() { }
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
   }
