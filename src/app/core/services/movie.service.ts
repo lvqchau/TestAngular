@@ -41,6 +41,11 @@ export class MovieService {
           { id: 2, name: 'Wonder woman', price: 80000 },
           { id: 3, name: 'Iron man', price: 80000 },
         ]);
+
+        // Khi Promise resolve thì không reject được nữa
+        // Khi Observale trả result xong thì vẫn trả ra lỗi được
+        // subscribe.error('Lỗi rồi')
+
         // Để kết thúc observable thì .complete()
         // Muốn gọi để trả về data thì phải .next(trả về kết quả/result)
         subscribe.complete()
