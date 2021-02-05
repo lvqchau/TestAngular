@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Movie, MovieDetail } from '../model/movie.model';
 
 @Injectable({
@@ -22,9 +22,15 @@ export class MovieService {
     return this.http.get<Movie[]>(url)
   }
 
-  getMovieDetail(movieId: string, page?: string): Observable<MovieDetail> {
-    const url = `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${movieId}`;
-    return this.http.get<MovieDetail>(url)
+  getMovieDetail(movieId: string): Observable<MovieDetail> {
+    // const url = `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${movieId}`;
+
+    const url = `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?`;
+    let params = new HttpParams()
+    params = params.append('maPhim', movieId)
+    // params = page ? params.append('page', page) : params
+
+    return this.http.get<MovieDetail>(url, { params })
   }
 
   //Promise
