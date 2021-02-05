@@ -19,10 +19,17 @@ export class MovieComponent implements OnInit {
     //B1: Lấy maPhim từ url
     this.activatedRoute.params.subscribe({
       next: (params) => {
-        console.log(params)
+        //B2: Gọi api
+        this.movieService.getMovieDetail(params.movieId).subscribe({
+          next: (result) => {
+            console.log(result)
+          },
+          error: (error) => {
+            console.log(error)
+          }
+        })
       }
     })
-    //B2: Gọi api
   }
 
 }
