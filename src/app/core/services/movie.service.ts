@@ -22,7 +22,7 @@ export class MovieService {
     return this.http.get<Movie[]>(url)
   }
 
-  getMovieDetail(movieId:string): Observable<MovieDetail> {
+  getMovieDetail(movieId: string, page?: string): Observable<MovieDetail> {
     const url = `https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=${movieId}`;
     return this.http.get<MovieDetail>(url)
   }
