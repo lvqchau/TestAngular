@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Movie } from '../model/movie.model';
+import { Movie, MovieDetail } from '../model/movie.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +22,9 @@ export class MovieService {
     return this.http.get<Movie[]>(url)
   }
 
-  getMovieDetil(): Observable<Movie[]> {
-    const url = "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01";
-    return this.http.get<Movie[]>(url)
+  getMovieDetail(): Observable<MovieDetail> {
+    const url = "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=1314";
+    return this.http.get<MovieDetail>(url)
   }
 
   //Promise
