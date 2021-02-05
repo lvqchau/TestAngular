@@ -1,14 +1,31 @@
-export interface UserSignin {
+export interface SigninParams {
   taiKhoan: string;
   matKhau: string;
 } 
 
-export interface UserSignup {
+export interface SigninResult {
   taiKhoan: string;
-  matKhau: string;
+  hoTen: string;
   email: string;
-  soDt: string;
+  soDT: string;
   maNhom: string;
   maLoaiNguoiDung: string;
-  hoTen: string;
+  accessToken: string;
 } 
+
+export interface SignupParams {
+  taiKhoan: string;
+  hoTen: string;
+  email: string;
+  soDT: string;
+  matKhau: string;
+}
+
+export interface SignupResult {
+  taiKhoan: string;
+  hoTen: string;
+  email: string;
+  soDT: string;
+  maNhom: string;
+  maLoaiNguoiDung: string;
+}
