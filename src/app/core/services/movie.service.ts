@@ -16,7 +16,7 @@ export class MovieService {
     ]
   }
 
-  getMovieListPromise() {
+  getMovieListPromise(): Promise<Movie[]> {
     return new Promise((resolve, reject) => {
       setTimeout(()=> {
         resolve([

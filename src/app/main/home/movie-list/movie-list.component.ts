@@ -11,8 +11,14 @@ export class MovieListComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    this.movieList = this.movieService.getMovieList()
-    console.log(this.movieList)
+    // this.movieList = this.movieService.getMovieList()
+    // console.log(this.movieList)
+    this.movieService.getMovieListPromise()
+      .then(result => {
+        this.movieList = result
+        console.log(this.movieList)
+      })
+      .catch(err => console.log(err))
   }
 
 }
