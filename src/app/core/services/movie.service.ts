@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Movie } from '../model/movie.model';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Movie } from '../model/movie.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getMovieList(): Movie[] {
-    return [
-      { id: 1, name: 'Avenger', price: 80000 },
-      { id: 2, name: 'Wonder woman', price: 80000 },
-      { id: 3, name: 'Iron man', price: 80000 },
-    ]
+  // getMovieList(): Movie[] {
+  //   return [
+  //     { id: 1, name: 'Avenger', price: 80000 },
+  //     { id: 2, name: 'Wonder woman', price: 80000 },
+  //     { id: 3, name: 'Iron man', price: 80000 },
+  //   ]
+  // }
+  getMovieList(): Observable<Movie[]> {
+    const url = "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01";
+    return this.http.get<Movie[]>(url)
   }
 
   //Promise
