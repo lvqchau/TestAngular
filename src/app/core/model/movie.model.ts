@@ -35,5 +35,5 @@ export interface CinemaDetail {
   
 
 export type MovieDetail = {
-  lichChieu: LichChieu[]
+  lichChieu: ShowTimes[]
 } & Movie
