@@ -22,6 +22,11 @@ export class MovieService {
     return this.http.get<Movie[]>(url)
   }
 
+  getMovieDetil(): Observable<Movie[]> {
+    const url = "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01";
+    return this.http.get<Movie[]>(url)
+  }
+
   //Promise
   // getMovieListPromise(): Promise<Movie[]> {
   //   return new Promise((resolve, reject) => {
