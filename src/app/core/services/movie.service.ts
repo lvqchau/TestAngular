@@ -15,4 +15,18 @@ export class MovieService {
       { id: 3, name: 'Iron man', price: 80000 },
     ]
   }
+
+  getMovieListPromise() {
+    return new Promise((resolve, reject) => {
+      setTimeout(()=> {
+        resolve([
+          { id: 1, name: 'Avenger', price: 80000 },
+          { id: 2, name: 'Wonder woman', price: 80000 },
+          { id: 3, name: 'Iron man', price: 80000 },
+        ])
+      }, 3000)
+    })
+  }
+
+
 }
