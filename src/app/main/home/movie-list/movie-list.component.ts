@@ -23,14 +23,17 @@ export class MovieListComponent implements OnInit {
     //     console.log(error)
     //   })
 
-    this.movieService.getMovieListObservable().subscribe(
-      (result) => {
+    this.movieService.getMovieListObservable().subscribe({
+      next: result => {
         this.movieList = result
       },
-      (error) => {
+      error: error => {
         console.log(error)
+      },
+      complete: () => {
+        console.log("DONE")
       }
-    )
+    })
   }
 
 }
