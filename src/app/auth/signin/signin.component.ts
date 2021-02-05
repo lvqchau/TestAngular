@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class SigninComponent implements OnInit {
     matKhau: new FormControl('', [Validators.required]),
   });
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -28,7 +29,7 @@ export class SigninComponent implements OnInit {
 
     this.authService.signin(this.signinForm.value).subscribe({
       next: result => {
-        console.log(result)
+        this.router.navigateByUrl('/')
       },
       error: error => {
         console.log(error)
