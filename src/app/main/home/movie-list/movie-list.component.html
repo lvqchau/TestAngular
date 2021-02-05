@@ -7,7 +7,10 @@
         <p>{{ movie.moTa }}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary">Chi tiết</button>
+        <button 
+          routerLink="/movie/{{movie.maPhim}}" 
+          mat-raised-button 
+          color="primary">Chi tiết</button>
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>

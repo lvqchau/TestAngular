@@ -14,7 +14,7 @@ const routes: Routes = [
     children: [
       // pathMatch: "full" => kiểm tra path phải khớp 100%
       { path: '', pathMatch: 'full', loadChildren: () => HomeModule },
-      { path: 'movie', loadChildren: () => MovieModule },
+      { path: 'movie/:movieId', loadChildren: () => MovieModule },
     ],
   },
 ];
