@@ -13,13 +13,8 @@ export interface Movie {
   tenPhim: string;
   trailer: string;
 }
-
-export interface MovieDetail {
-  lichChieu: LichChieu[];
-}
-
-export interface LichChieu {
-  thongTinRap:       ThongTinRap;
+export interface ShowTimes {
+  thongTinRap:       CinemaDetail;
   maLichChieu:       number;
   maRap:             number;
   maPhim:            number;
@@ -29,7 +24,7 @@ export interface LichChieu {
   thoiLuong:         number;
 }
 
-export interface ThongTinRap {
+export interface CinemaDetail {
   maRap:         number;
   tenRap:        string;
   maCumRap:      string;
@@ -38,3 +33,7 @@ export interface ThongTinRap {
   tenHeThongRap: string;
 }
   
+
+export type MovieDetail = {
+  lichChieu: LichChieu[]
+} & Movie
