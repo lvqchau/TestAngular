@@ -13,14 +13,24 @@ export class MovieListComponent implements OnInit {
   ngOnInit(): void {
     // this.movieList = this.movieService.getMovieList()
     // console.log(this.movieList)
-    this.movieService.getMovieListPromise()
-      .then((result) => {
+
+    // this.movieService.getMovieListPromise()
+    //   .then((result) => {
+    //     this.movieList = result
+    //     console.log(this.movieList)
+    //   })
+    //   .catch((error) => {
+    //     console.log(error)
+    //   })
+
+    this.movieService.getMovieListObservable().subscribe(
+      (result) => {
         this.movieList = result
-        console.log(this.movieList)
-      })
-      .catch((error) => {
+      },
+      (error) => {
         console.log(error)
-      })
+      }
+    )
   }
 
 }

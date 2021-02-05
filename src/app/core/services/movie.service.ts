@@ -33,7 +33,7 @@ export class MovieService {
   }
   
   //Observable
-  getMovieListObservable() {
+  getMovieListObservable(): Observable<Movie[]> {
     return new Observable((subscribe) => {
       setTimeout(() => {
         subscribe.next([
