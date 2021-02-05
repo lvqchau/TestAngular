@@ -1,4 +1,3 @@
-import { MovieDetail } from './../../core/model/movie.model';
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../core/services/movie.service'
 import { MovieDetail } from '../../core/model/movie.model'
