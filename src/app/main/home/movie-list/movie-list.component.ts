@@ -14,11 +14,13 @@ export class MovieListComponent implements OnInit {
     // this.movieList = this.movieService.getMovieList()
     // console.log(this.movieList)
     this.movieService.getMovieListPromise()
-      .then(result => {
+      .then((result) => {
         this.movieList = result
         console.log(this.movieList)
       })
-      .catch(err => console.log(err))
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
 }
