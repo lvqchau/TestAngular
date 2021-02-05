@@ -24,12 +24,17 @@ export class MovieListComponent implements OnInit {
     //   })
 
     this.movieService.getMovieListObservable().subscribe({
+      // Khi nhận kết quả
       next: result => {
         this.movieList = result
+        console.log(this.movieList)
       },
+      // Khi nhận lỗi
       error: error => {
         console.log(error)
       },
+
+      // Khi kết thúc
       complete: () => {
         console.log("DONE")
       }
