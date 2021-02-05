@@ -10,7 +10,7 @@ export class MovieListComponent implements OnInit {
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    this.movieList = this.movieService.movieList
+    this.movieList = this.movieService.getMovieList()
     console.log(this.movieList)
   }
 
