@@ -8,6 +8,7 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [HomeComponent, CarouselComponent, MovieListComponent],
@@ -15,7 +16,8 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule,
     HomeRoutingModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class HomeModule { }
